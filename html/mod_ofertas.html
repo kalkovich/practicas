@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderación de Ofertas - Administrador</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/mod_ofertas.css" rel="stylesheet"> <!-- Aquí enlazas el CSS -->
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Administrador</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gestion_usuarios.html">Gestión de Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mod_ofertas.html">Moderación de Ofertas</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="registrarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Registrar...
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="registrarDropdown">
+                        <a class="dropdown-item" href="registro_empresas.html">Registrar Empresas</a>
+                        <a class="dropdown-item" href="register_admin.html">Registrar Estudiantes</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h2 class="text-center mb-4">Moderación de Ofertas de Prácticas</h2>
+
+        <!-- Tabla de ofertas -->
+        <table class="table table-hover table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Empresa</th>
+                    <th>Descripción</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="offers-table">
+                <tr>
+                    <td>1</td>
+                    <td>Práctica en Desarrollo Web</td>
+                    <td>Empresa XYZ</td>
+                    <td>Oportunidad para estudiantes con conocimientos en JavaScript y React.js.</td>
+                    <td>25/09/2024</td>
+                    <td>
+                        <button class="btn btn-success btn-sm approve-btn">Aprobar</button>
+                        <button class="btn btn-danger btn-sm reject-btn">Rechazar</button>
+                    </td>
+                    <td class="status">Pendiente</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Práctica en Marketing Digital</td>
+                    <td>Empresa ABC</td>
+                    <td>Buscamos estudiantes apasionados por el marketing digital y redes sociales.</td>
+                    <td>24/09/2024</td>
+                    <td>
+                        <button class="btn btn-success btn-sm approve-btn">Aprobar</button>
+                        <button class="btn btn-danger btn-sm reject-btn">Rechazar</button>
+                    </td>
+                    <td class="status">Pendiente</td>
+                </tr>
+                <!-- Más ofertas pueden agregarse aquí -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript para manejar las acciones de aprobación/rechazo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const approveButtons = document.querySelectorAll('.approve-btn');
+            const rejectButtons = document.querySelectorAll('.reject-btn');
+
+            approveButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const row = this.closest('tr');
+                    row.querySelector('.status').textContent = 'Aprobado';
+                    row.querySelector('.status').classList.add('status-approved');
+                    row.querySelector('.status').classList.remove('status-rejected');
+                });
+            });
+
+            rejectButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const row = this.closest('tr');
+                    row.querySelector('.status').textContent = 'Rechazado';
+                    row.querySelector('.status').classList.add('status-rejected');
+                    row.querySelector('.status').classList.remove('status-approved');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Empresa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" data-aos="fade-down">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Plataforma de Prácticas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard_empresa.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil_empresa.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Perfil de la Empresa -->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="row">
+            <!-- Columna izquierda: Información de la Empresa -->
+            <div class="col-md-4" data-aos="fade-right">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/150" alt="Logo de la Empresa" class="img-fluid rounded-circle mb-3" id="logoEmpresa">
+                        <h5 class="card-title">Empresa: Tech Solutions</h5>
+                        <p class="card-text">Industria: Tecnología</p>
+                        <p class="card-text">Ubicación: Bogotá, Colombia</p>
+                        <p class="card-text">Correo: contacto@techsolutions.com</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarPerfilModal">Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha: Información adicional y editar -->
+            <div class="col-md-8">
+                <div class="card" data-aos="fade-left">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción de la Empresa</h5>
+                        <textarea class="form-control" id="descripcionEmpresa" rows="4" readonly>Somos una empresa dedicada al desarrollo de software y soluciones tecnológicas innovadoras.</textarea>
+                        <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#editarDescripcionModal">Editar Descripción</button>
+                    </div>
+                </div>
+
+                <div class="card mt-4" data-aos="fade-up">
+                    <div class="card-body">
+                        <h5 class="card-title">Información de Contacto</h5>
+                        <form action="#" method="post">
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" id="telefono" value="123-456-7890">
+                            </div>
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="direccion" value="Calle 123 # 45-67, Bogotá" readonly>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Perfil -->
+    <div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarPerfilModalLabel">Editar Perfil de Empresa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <label for="modalNombreEmpresa" class="form-label">Nombre de la Empresa</label>
+                            <input type="text" class="form-control" id="modalNombreEmpresa" value="Tech Solutions">
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalCorreo" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="modalCorreo" value="contacto@techsolutions.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalTelefono" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="modalTelefono" value="123-456-7890">
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalUbicacion" class="form-label">Ubicación</label>
+                            <input type="text" class="form-control" id="modalUbicacion" value="Bogotá, Colombia">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Descripción -->
+    <div class="modal fade" id="editarDescripcionModal" tabindex="-1" aria-labelledby="editarDescripcionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarDescripcionModalLabel">Editar Descripción de la Empresa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <label for="modalDescripcion" class="form-label">Descripción de la Empresa</label>
+                            <textarea class="form-control" id="modalDescripcion" rows="4">Somos una empresa dedicada al desarrollo de software y soluciones tecnológicas innovadoras.</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary text-white text-center p-3 mt-5" data-aos="fade-up">
+        <p>Plataforma de Prácticas Empresariales &copy; 2024</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true // Las animaciones se ejecutan solo una vez
+        });
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/66f4401a4cbc4814f7de9d9a/1i8l1kpo0';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

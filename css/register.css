@@ -1,0 +1,85 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #1e3c72, #2a69ac); /* Fondo animado en azul */
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite; /* Animación de gradiente */
+    filter: brightness(0.95); /* Ajusta el brillo del fondo */
+    font-family: 'Arial', sans-serif;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilo para el contenedor del registro */
+.register-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo del contenedor con opacidad */
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título del Registro */
+.register-title {
+    color: #007bff; /* Color azul */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Estilos para los campos de texto */
+.form-control {
+    font-size: 1.2rem;
+    border: 1px solid #007bff;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Brillo inicial */
+}
+
+.form-control:focus {
+    border-color: #0056b3; /* Azul más oscuro */
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.5); /* Brillo normal al enfocar */
+}
+
+/* Estilos para las etiquetas */
+label {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Botón de registro con animación */
+.register-btn {
+    font-size: 1.2rem;
+    background-color: #007bff; /* Azul */
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #0056b3; /* Cambia a un azul más oscuro */
+    transform: scale(1.05);
+}
+
+/* Estilo para el texto de inicio de sesión */
+.login-text {
+    color: #555;
+}
+
+.login-link {
+    color: #007bff; /* Azul */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #0056b3; /* Azul más oscuro */
+    text-decoration: underline;
+}

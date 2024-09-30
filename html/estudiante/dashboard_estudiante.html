@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Estudiante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" data-aos="fade-down">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Plataforma de Prácticas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="dashboard_estudiante.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil_estudiante.html">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sección de perfil del estudiante -->
+            <div class="col-md-4" data-aos="fade-right">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="img-fluid rounded-circle mb-3">
+                        <h5 class="card-title">Estudiante</h5>
+                        <p class="card-text">Andrés Fernández</p>
+                        <a href="#" class="btn btn-primary">Editar perfil</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de aplicaciones -->
+            <div class="col-md-8" data-aos="fade-up">
+                <h3>Mis Aplicaciones</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Puesto</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Empresa XYZ</td>
+                            <td>Desarrollador Web</td>
+                            <td>En revisión</td>
+                            <td><button class="btn btn-info">Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>Empresa ABC</td>
+                            <td>Analista de Datos</td>
+                            <td>Entrevista agendada</td>
+                            <td><button class="btn btn-info">Detalles</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sección de ofertas de prácticas -->
+        <div class="row mt-5" data-aos="fade-up" data-aos-once="true">
+            <h3>Ofertas de Prácticas Disponibles</h3>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-once="true">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Desarrollador Frontend</h5>
+                        <p class="card-text">Empresa: Tech Solutions</p>
+                        <p class="card-text">Duración: 6 meses</p>
+                        <p class="card-text">Ubicación: Remoto</p>
+                        <p class="card-text">Descripción: Se busca desarrollador con conocimientos en HTML, CSS y JavaScript para el desarrollo de interfaces web.</p>
+                        <a href="#" class="btn btn-primary">Aplicar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100" data-aos-once="true">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Analista de Datos</h5>
+                        <p class="card-text">Empresa: DataCorp</p>
+                        <p class="card-text">Duración: 3 meses</p>
+                        <p class="card-text">Ubicación: Bogotá, Colombia</p>
+                        <p class="card-text">Descripción: Análisis de grandes volúmenes de datos para extraer información valiosa y apoyar la toma de decisiones estratégicas.</p>
+                        <a href="#" class="btn btn-primary">Aplicar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200" data-aos-once="true">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Marketing Digital</h5>
+                        <p class="card-text">Empresa: MarketingPro</p>
+                        <p class="card-text">Duración: 4 meses</p>
+                        <p class="card-text">Ubicación: Ciudad de México</p>
+                        <p class="card-text">Descripción: Gestión de campañas publicitarias en redes sociales y análisis de métricas de rendimiento.</p>
+                        <a href="#" class="btn btn-primary">Aplicar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary text-white text-center p-3 mt-5" data-aos="fade-up" data-aos-once="true">
+        <p>Plataforma de Prácticas Empresariales &copy; 2024</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true // Las animaciones ocurren solo una vez
+        });
+    </script>
+        <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66f4401a4cbc4814f7de9d9a/1i8l1kpo0';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

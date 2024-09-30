@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Empresas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Menú de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Administrador</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="admin.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gestion_usuarios.html">Gestión de Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mod_ofertas.html">Moderación de Ofertas</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="registrarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Registrar...
+                </a>
+                <div class="dropdown-menu" aria-labelledby="registrarDropdown">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#agregarEmpresaModal">Registrar Empresas</a>
+                    <a class="dropdown-item" href="register_admin.html">Registrar Estudiantes</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Dashboard Principal -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="list-group" id="sidebar">
+                <a href="#" class="list-group-item list-group-item-action active" data-content="empresas-registradas">Empresas Registradas</a>
+                <a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#agregarEmpresaModal">Agregar Empresa</a>
+            </div>
+        </div>
+
+        <!-- Sección de contenido -->
+        <div class="col-md-9">
+            <!-- Contenido dinámico -->
+            <div id="content">
+                <!-- Empresas Registradas (Por defecto) -->
+                <h2>Empresas Registradas</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Empresa</th>
+                                <th>Correo Electrónico</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Tipo de Empresa</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Empresa A</td>
+                                <td>empresaA@correo.com</td>
+                                <td>123456789</td>
+                                <td>Calle Falsa 123</td>
+                                <td>Tecnología</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editarEmpresaModal">Editar</button>
+                                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                                </td>
+                            </tr>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Agregar Empresa -->
+<div class="modal fade" id="agregarEmpresaModal" tabindex="-1" aria-labelledby="agregarEmpresaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarEmpresaModalLabel">Agregar Empresa</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formAgregarEmpresa">
+                    <div class="mb-3">
+                        <label for="nombreEmpresa" class="form-label">Nombre Empresa</label>
+                        <input type="text" class="form-control" id="nombreEmpresa" required>
+                        <small class="form-text text-muted">Ingrese el nombre de la empresa.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correoEmpresa" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correoEmpresa" required>
+                        <small class="form-text text-muted">Ingrese un correo electrónico válido.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefonoEmpresa" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefonoEmpresa" required pattern="[0-9]{10}">
+                        <small class="form-text text-muted">Ingrese solo números (10 dígitos).</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccionEmpresa" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccionEmpresa" required>
+                        <small class="form-text text-muted">Ingrese la dirección de la empresa.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipoEmpresa" class="form-label">Tipo de Empresa</label>
+                        <select class="form-control" id="tipoEmpresa" required>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="salud">Salud</option>
+                            <option value="educacion">Educación</option>
+                            <option value="finanzas">Finanzas</option>
+                            <option value="turismo">Turismo</option>
+                        </select>
+                        <small class="form-text text-muted">Seleccione el tipo de empresa.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Empresa</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Editar Empresa -->
+<div class="modal fade" id="editarEmpresaModal" tabindex="-1" aria-labelledby="editarEmpresaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarEmpresaModalLabel">Editar Empresa</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarEmpresa">
+                    <div class="mb-3">
+                        <label for="editarNombreEmpresa" class="form-label">Nombre Empresa</label>
+                        <input type="text" class="form-control" id="editarNombreEmpresa" value="Empresa A" required>
+                        <small class="form-text text-muted">Ingrese el nombre de la empresa.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editarCorreoEmpresa" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="editarCorreoEmpresa" value="empresaA@correo.com" required>
+                        <small class="form-text text-muted">Ingrese un correo electrónico válido.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editarTelefonoEmpresa" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="editarTelefonoEmpresa" value="123456789" required pattern="[0-9]{10}">
+                        <small class="form-text text-muted">Ingrese solo números (10 dígitos).</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editarDireccionEmpresa" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="editarDireccionEmpresa" value="Calle Falsa 123" required>
+                        <small class="form-text text-muted">Ingrese la dirección de la empresa.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editarTipoEmpresa" class="form-label">Tipo de Empresa</label>
+                        <select class="form-control" id="editarTipoEmpresa" required>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="salud">Salud</option>
+                            <option value="educacion">Educación</option>
+                            <option value="finanzas">Finanzas</option>
+                            <option value="turismo">Turismo</option>
+                        </select>
+                        <small class="form-text text-muted">Seleccione el tipo de empresa.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Enlace al archivo JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

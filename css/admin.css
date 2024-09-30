@@ -1,0 +1,75 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa; /* Fondo crema claro */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #ffffff; /* Fondo blanco para la barra de navegación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.nav-link {
+    color: #007bff !important; /* Azul para los enlaces */
+}
+
+.nav-link:hover {
+    color: #0056b3 !important; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Contenido principal */
+h2 {
+    font-size: 2.5rem;
+    color: #007bff; /* Título azul */
+}
+
+/* Gráficas */
+canvas {
+    background-color: #ffffff; /* Fondo blanco para las gráficas */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Tarjetas (cards) */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #007bff; /* Borde azul */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de agrandar al pasar el cursor */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.card-text {
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.coso {
+    color: red;
+}

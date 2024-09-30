@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación Centrado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .menu-container {
+            background-color: #343a40;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        .menu-container h2 {
+            color: white;
+            text-align: center;
+        }
+        .menu-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-container ul li {
+            margin: 10px 0;
+        }
+        .menu-container ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .menu-container ul li a:hover {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu-container text-center">
+    <h2>Empresas</h2>
+    <ul>
+        <li><a href="html/empresas/dashboard_empresa.html" target="_blank">Dashboard Empresa</a></li>
+        <li><a href="html/empresas/perfil_empresas.html" target="_blank">Perfil Empresa</a></li>
+    </ul>
+    
+    <h2>Estudiantes</h2>
+    <ul>
+        <li><a href="html/estudiante/dashboard_estudiante.html" target="_blank">Dashboard Estudiante</a></li>
+        <li><a href="html/estudiante/perfil_estudiante.html" target="_blank">Perfil Estudiante</a></li>
+    </ul>
+    
+    <h2>Administrador</h2>
+    <ul>
+        <li><a href="html/admin.html" target="_blank">Admin</a></li>
+        <li><a href="html/gestion_usuarios.html" target="_blank">Gestión de Usuarios</a></li>
+        <li><a href="html/login.html" target="_blank">Login</a></li>
+        <li><a href="html/mod_ofertas.html" target="_blank">Moderación de Ofertas</a></li>
+        <li><a href="html/register_admin.html" target="_blank">Registrar Admin</a></li>
+        <li><a href="html/registro_empresas.html" target="_blank">Registro Empresas</a></li>
+    </ul>
+</div>
+
+<!-- Carga de Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

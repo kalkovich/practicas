@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Aquí enlaza tu archivo CSS -->
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Administrador</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gestion_usuarios.html">Gestión de Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mod_ofertas.html">Moderación de Ofertas</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="registrarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Registrar...
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="registrarDropdown">
+                        <a class="dropdown-item" href="registro_empresas.html">Registrar Empresas</a>
+                        <a class="dropdown-item" href="register_admin.html">Registrar Estudiantes</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mt-5">
+        <h2 class="text-center">Gestión de Usuarios</h2>
+
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th>Tipo de Carrera</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Andrés Fernández</td>
+                    <td>
+                        <select class="form-control">
+                            <option value="estudiante">Estudiante</option>
+                            <option value="empleador">Empleador</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option value="Telemática">Ingeniería Telemática</option>
+                            <option value="Industrial">Ingeniería Industrial</option>
+                            <option value="Mecatrónica">Ingeniería Mecatrónica</option>
+                            <option value="Eléctrica">Ingeniería Eléctrica</option>
+                            <option value="Seguridad">Ingeniería en Seguridad y Salud en el Trabajo</option>
+                            <option value="Negocios">Administración de Negocios Internacionales</option>
+                            <option value="Inteligencia">Inteligencia de Negocios</option>
+                            <option value="Gráfico">Diseño Gráfico</option>
+                        </select>
+                    </td>
+                    <td>********</td>
+                    <td>
+                        <button class="btn btn-primary">Cambiar Rol</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Álvaro Torres</td>
+                    <td>
+                        <select class="form-control">
+                            <option value="estudiante">Estudiante</option>
+                            <option value="empleador">Empleador</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option value="Telemática">Ingeniería Telemática</option>
+                            <option value="Industrial">Ingeniería Industrial</option>
+                            <option value="Mecatrónica">Ingeniería Mecatrónica</option>
+                            <option value="Eléctrica">Ingeniería Eléctrica</option>
+                            <option value="Seguridad">Ingeniería en Seguridad y Salud en el Trabajo</option>
+                            <option value="Negocios">Administración de Negocios Internacionales</option>
+                            <option value="Inteligencia">Inteligencia de Negocios</option>
+                            <option value="Gráfico">Diseño Gráfico</option>
+                        </select>
+                    </td>
+                    <td>********</td>
+                    <td>
+                        <button class="btn btn-primary">Cambiar Rol</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Empresa XYZ</td>
+                    <td>Empleador</td>
+                    <td>No aplica</td>
+                    <td>********</td>
+                    <td>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
